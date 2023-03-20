@@ -6,7 +6,6 @@
 
 body{
     width: 100%;
-    height: 100vh;
     font-family: Arial, sans-serif;
 }
 /* NAVBAR */
@@ -66,14 +65,14 @@ li{
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 70vh;
+    height: 75vh;
 }
 
-
+/* SECTION */
 #footer{
     position: absolute;
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     background-color: #2B4DFF;
 }
 
@@ -159,7 +158,7 @@ li{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-right: 0%;
+        padding-right: 0%;
     }
     
     .footer-end img{
@@ -170,7 +169,7 @@ li{
         
     .footer-end  p{
         font-size: 1em;
-        margin: 1.5% 0;
+        margin: 1% 0;
     }
 }
     
@@ -228,7 +227,6 @@ li{
         
     .footer-end  p{
         font-size: 0.8em;
-        margin: 1% 0;
     }
     /* FOOTER */
 }
