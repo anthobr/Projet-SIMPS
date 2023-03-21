@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles3.css">
 </head>
 <body>
+   <!--HEADER-->
     <header id="header">
         <div class="image">
             <img src="images/logosimpson.png" alt="les_simpsons">
@@ -20,59 +21,61 @@
             </ul>
         </nav>
     </header>
-
-    <section id="home" class="welcome-page">
-      <h1 class="title-shop">SIMPSONS SHOP</h1>
-      <div class="shop">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">PRODUCT</th>
-                <th scope="col">NAME</th>
-                <th scope="col">PRICE</th>
-                <th scope="col">ACHAT</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><img src="images/donuts.webp" alt="donuts"></th>
-                <td>Boite de 12 Donuts</td>
-                <td>5$</td>
-                <td><button action=""><img src="images/caddie.png" alt="panier"></button></td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="images/duff.png" alt="biere"></th>
-                <td>Pack de 6 duff</td>
-                <td>6$</td>
-                <td><button action=""><img src="images/caddie.png" alt="panier"></button></td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="images/jeu DS.jpg" alt="Jeuspimson"></th>
-                <td>Jeu "les Simpsons" DS</td>
-                <td>30$</td>
-                <td><button action=""><img src="images/caddie.png" alt="panier"></button></td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="images/Jeuspimson.webp" alt="Jeuspimson"></th>
-                <td>Jeu "les Simpsons" Wii</td>
-                <td>30$</td>
-                <td><button action=""><img src="images/caddie.png" alt="panier"></button></td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="images/Image.png" alt="figurine"></th>
-                <td>Figurine Barns</td>
-                <td>20$</td>
-                <td><button action=""><img src="images/caddie.png" alt="panier"></button></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="table-2">
+     <!--FIN HEADER-->
+      <!--SECTION-->
+      <section id="home" class="welcome-page">
+        <h1 class="title-shop">SIMPSONS SHOP</h1>
+        <div class="shop">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">PRODUCT</th>
+                  <th scope="col">NAME</th>
+                  <th scope="col">PRICE</th>
+                  <th scope="col">ACHAT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="product">
+                  <th scope="row"><img src="images/donuts.webp" alt="donuts"></th>
+                  <td class="description">Boite de 12 Donuts</td>
+                  <td class="price">5€</td>
+                  <td><button class="add-to-cart" data-id="produit1"><img src="images/caddie.png" alt="panier"></button></td>
+                </tr>
+                <tr class="product">
+                  <th scope="row"><img src="images/duff.png" alt="biere"></th>
+                  <td class="description">Pack de 6 Duff</td>
+                  <td class="price">6€</td>
+                  <td><button class="add-to-cart" data-id="produit2"><img src="images/caddie.png" alt="panier"></button></td>
+                </tr>
+                <tr id="product">
+                  <th scope="row"><img src="images/jeu DS.jpg" alt="Jeuspimson"></th>
+                  <td id="description">Jeu "les Simpsons" DS</td>
+                  <td id="price">30€</td>
+                  <td><button id="add-to-cart" data-id="produit3"><img src="images/caddie.png" alt="panier"></button></td>
+                </tr>
+                <tr class="product">
+                  <th scope="row"><img src="images/Jeuspimson.webp" alt="Jeuspimson"></th>
+                  <td class="description">Jeu "les Simpsons" Wii</td>
+                  <td class="price">30€</td>
+                  <td><button class="add-to-cart" data-id="produit4"><img src="images/caddie.png" alt="panier"></button></td>
+                </tr>
+                <tr id="product">
+                  <th scope="row"><img src="images/Image.png" alt="figurine"></th>
+                  <td id="description">Figurine Barns</td>
+                  <td id="price">20€</td>
+                  <td><button id="add-to-cart" data-id="produit5"><img src="images/caddie.png" alt="panier"></button></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="table-2">
                   <div class="homer-choose"><img src="images/Homer 2.png" alt="homer"></div>
-                  <button action="">Voir votre panier</button>
-          </div>
-        </div>
-    </section>    
-    
+            <div id="cart-container">
+                    <button id="panier" onclick="">Voir votre panier</button>
+                  </div>
+      </section>    
+     <!--FIN SECTION-->
+    <!--FOOTER-->
     <footer id="footer">
         <div class="footer-end">
             <p><img src="images/cpyright.png" alt="copyright">Les SIMPSONS 2023</p>
@@ -80,6 +83,7 @@
             <p><span>Site officiel:</span><span><a href="">Les Simpsons</a></span></a></p>
         </div>
     </footer>
+     <!-- FIN FOOTER-->
     <script src="main.js"></script>
 
 </body>
