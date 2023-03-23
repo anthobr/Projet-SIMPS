@@ -24,8 +24,10 @@
      <!--FIN HEADER-->
       <!--SECTION-->
       <section id="home" class="welcome-page">
+
         <h1 class="title-shop">SIMPSONS SHOP</h1>
         <div class="shop">
+          
           <table class="table">
               <thead>
                 <tr>
@@ -48,11 +50,11 @@
                   <td class="price">6€</td>
                   <td><button class="add-to-cart" data-id="produit2"><img src="images/caddie.png" alt="panier"></button></td>
                 </tr>
-                <tr id="product">
+                <tr class="product">
                   <th scope="row"><img src="images/jeu DS.jpg" alt="Jeuspimson"></th>
-                  <td id="description">Jeu "les Simpsons" DS</td>
-                  <td id="price">30€</td>
-                  <td><button id="add-to-cart" data-id="produit3"><img src="images/caddie.png" alt="panier"></button></td>
+                  <td class="description">Jeu "les Simpsons" DS</td>
+                  <td class="price">30€</td>
+                  <td><button class="add-to-cart" data-id="produit3"><img src="images/caddie.png" alt="panier"></button></td>
                 </tr>
                 <tr class="product">
                   <th scope="row"><img src="images/Jeuspimson.webp" alt="Jeuspimson"></th>
@@ -60,20 +62,57 @@
                   <td class="price">30€</td>
                   <td><button class="add-to-cart" data-id="produit4"><img src="images/caddie.png" alt="panier"></button></td>
                 </tr>
-                <tr id="product">
+                <tr class="product">
                   <th scope="row"><img src="images/Image.png" alt="figurine"></th>
-                  <td id="description">Figurine Barns</td>
-                  <td id="price">20€</td>
-                  <td><button id="add-to-cart" data-id="produit5"><img src="images/caddie.png" alt="panier"></button></td>
+                  <td class="description">Figurine Barns</td>
+                  <td class="price">20€</td>
+                  <td><button class="add-to-cart" data-id="produit5"><img src="images/caddie.png" alt="panier"></button></td>
                 </tr>
               </tbody>
-            </table>
-            <div class="table-2">
-                  <div class="homer-choose"><img src="images/Homer 2.png" alt="homer"></div>
-            <div id="cart-container">
-                    <button id="panier" onclick="">Voir votre panier</button>
+          </table>
+
+          <div class="table-2">
+                  <div class="homer-choose">
+                    <img src="images/Homer 2.png" alt="homer">
                   </div>
-      </section>    
+                  <div id="cart-container">
+                    <button id="panier"><span>Voir votre panier:</span><span>0 article</span></button>
+                  </div>
+          </div>
+        </div>
+        
+    </section>
+
+    <section id="div-panier" style="display: none;">
+      <h2>VOTRE PANIER :</h2>
+      <div class="global">
+        <div id="achats-total">
+          <div class="achat">
+
+          </div>
+          <div class="achat">
+
+          </div>
+          <div class="achat">
+
+          </div>
+          <div class="achat">
+
+          </div>
+          <div class="achat">
+
+          </div>
+        </div>
+      <div class="price-total">
+        <p>Votre panier est vide</p>
+      </div>
+    </div>
+    </section>
+          <!--<div id="dialog">
+            <button id="closeBtn" style="display: block; background-color: red;">close</button>
+            <div class="ff" style="background-color: blue;"></div>
+          </div>
+      </section>    -->
      <!--FIN SECTION-->
     <!--FOOTER-->
     <footer id="footer">

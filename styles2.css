@@ -63,6 +63,11 @@ li{
 
 .welcome-page{
     background-color: #FCFF64;
+    background-image: linear-gradient(
+        135deg,
+        #FFFF89 30%,
+        #FCFF64 70%
+    );
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -77,25 +82,38 @@ h1{
     padding: 3% 0% 3% 0%;
     font-weight: bold;
     font-size: 40px;
+    height: 25vh;
     text-align: center;
+    display: flex;
+    align-items: flex-end;
     color: lightcoral;
 }
 
 .row{
     text-align: center;
     width: 100%;
-    padding: 10% 0% 10% 0%;
+    padding: 5% 0% 5% 0%;
 }
 
-.dropdown-item{
-    text-align: center;
-    width: 100%;
-    padding: 0% 5%;
+#select{
+    height: 15vh;
 }
 
 .form-select{
     width: 100%;
 }
+
+.dropdown-item{
+    text-align: center;
+    width: 100%;
+    padding: 0% 2%;
+}
+
+#container{
+    height: 30vh;
+}
+
+
 
 /* SECTION */
 

@@ -63,6 +63,11 @@ li{
 
 .welcome-page{
     background-color: #FCFF64;
+    background-image: linear-gradient(
+        135deg,
+        #FFFF89 30%,
+        #FCFF64 70%
+    );
     display: flex;
     flex-direction: row;
     width: 100%;
