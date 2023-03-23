@@ -34,7 +34,35 @@ const cartButton = document.querySelector("#panier");
 cartButton.addEventListener("click", () => {
   let cartPage = document.querySelector('#div-panier').style.display = 'block'; document.querySelector('#home').style.display = "none";
 
-  // Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
+// Ajoutez un objet "quantité" à chaque produit dans le panier
+function addToCart(product) {
+  const existingCartItem = cartItems.find((item) => item.id === product.id);
+  if (existingCartItem) {
+    existingCartItem.quantity += 1;
+  } else {
+    cartItems.push({...product, quantity: 1});
+  }
+}
+
+// Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
+const cartAjout = document.querySelector("#achats-total");
+
+cartItems.forEach((product) => {
+  let cartProduct = document.createElement("div");
+  cartProduct.classList.add("achat");
+  cartProduct.innerHTML = `
+    <img src="${product.image}" alt="${product.description}">
+    <p>${product.description}</p>
+    <p>${product.price}</p>
+    <p>'Quantité:'${product.quantity}</p>
+  `;
+  cartAjout.appendChild(cartProduct);
+});
+  // Ajoutez la page du panier à l'élément body de la page
+  document.body.appendChild(cartPage);
+});
+
+ /*// Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
   const cartAjout = document.querySelector("#achats-total");
 
   cartItems.forEach((product) => {
@@ -45,18 +73,9 @@ cartButton.addEventListener("click", () => {
       <p>${product.price}</p>
     `;
     cartAjout.appendChild(cartProduct);
-
   })
 
-  // Ajoutez la page du panier à l'élément body de la page
-  document.body.appendChild(cartPage);
-});
-
-
-
-
-
-
+*/
 
 
 
