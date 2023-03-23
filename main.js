@@ -12,9 +12,10 @@ addToCartButtons.forEach((button) => {
     const productImage = productRow.querySelector("img").src;
     const productDescription = productRow.querySelector(".description").textContent;
     const productPrice = productRow.querySelector(".price").textContent;
-
+    const productQuantity = productRow.querySelector(".quantité").textContent;
+  
     // Créez un objet pour représenter le produit et ajoutez-le au tableau du panier
-    const product = { image: productImage, description: productDescription, price: productPrice };
+    const product = { image: productImage, description: productDescription, price: productPrice, quantity: productQuantity };
     cartItems.push(product);
 
     // Fonction pour mettre à jour le nombre d'articles dans le panier affiché sur le bouton "voir mon panier"
@@ -34,6 +35,9 @@ const cartButton = document.querySelector("#panier");
 cartButton.addEventListener("click", () => {
   let cartPage = document.querySelector('#div-panier').style.display = 'block'; document.querySelector('#home').style.display = "none";
 
+// Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
+const cartAjout = document.querySelector("#achats-total");
+
 // Ajoutez un objet "quantité" à chaque produit dans le panier
 function addToCart(product) {
   const existingCartItem = cartItems.find((item) => item.id === product.id);
@@ -44,9 +48,6 @@ function addToCart(product) {
   }
 }
 
-// Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
-const cartAjout = document.querySelector("#achats-total");
-
 cartItems.forEach((product) => {
   let cartProduct = document.createElement("div");
   cartProduct.classList.add("achat");
@@ -54,84 +55,10 @@ cartItems.forEach((product) => {
     <img src="${product.image}" alt="${product.description}">
     <p>${product.description}</p>
     <p>${product.price}</p>
-    <p>'Quantité:'${product.quantity}</p>
+    <p>Quantité:${product.quantity}</p>
   `;
   cartAjout.appendChild(cartProduct);
 });
   // Ajoutez la page du panier à l'élément body de la page
   document.body.appendChild(cartPage);
 });
-
- /*// Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
-  const cartAjout = document.querySelector("#achats-total");
-
-  cartItems.forEach((product) => {
-    let cartProduct = document.querySelector(".achat");
-    cartProduct.innerHTML = `
-      <img src="${product.image}" alt="${product.description}">
-      <p>${product.description}</p>
-      <p>${product.price}</p>
-    `;
-    cartAjout.appendChild(cartProduct);
-  })
-
-*/
-
-
-
-
-
-
-
-// Créez une page pour afficher les produits ajoutés au panier
-  /*let cartPage = document.createElement("div");
-  cartPage.style.position = "fixed";
-  cartPage.style.top = "15vh";
-  cartPage.style.bottom = "10vh";
-  cartPage.style.left = "0";
-  cartPage.style.width = "100%";
-  cartPage.style.height = "75vh";
-  cartPage.style.backgroundColor = "yellow";
-  cartPage.style.zIndex = "+1";
-  cartPage.style.display = "flex";
-  cartPage.style.flexDirection = "column";
-  cartPage.style.textAlign = "center";
-  cartPage.style.alignItems = "center";
-
-
-  cartItems.forEach((product) => {
-    let cartProduct = document.createElement("div");
-    cartProduct.innerHTML = `
-      <img src="${product.image}" alt="${product.description}">
-      <p>${product.description}</p>
-      <p>${product.price}</p>
-    `;
-    cartPage.appendChild(cartProduct);
-  });
-
-  // Ajoutez la page du panier à l'élément body de la page
-  document.body.appendChild(cartPage);
-});*/
-
-
-/*// Ajouter un gestionnaire d'événements au bouton "voir mon panier"
-const cartButton = document.querySelector("#panier");
-cartButton.addEventListener("click", () => {
-  let cartPage = document.querySelector('#div-panier').style.display = 'block'; document.querySelector('#home').style.display = "none";
-
-
-  // Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
-  cartItems.forEach((product) => {
-    let cartProduct = document.querySelector("#achats-total");
-    cartProduct.innerHTML = `
-      <img src="${product.image}" alt="${product.description}">
-      <p>${product.description}</p>
-      <p>${product.price}</p>
-    `;
-    cartPage.appendChild(cartProduct);
-
-  })
-
-  // Ajoutez la page du panier à l'élément body de la page
-  document.body.appendChild(cartPage);
-});*/
