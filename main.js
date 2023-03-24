@@ -12,22 +12,36 @@ addToCartButtons.forEach((button) => {
     const productImage = productRow.querySelector("img").src;
     const productDescription = productRow.querySelector(".description").textContent;
     const productPrice = productRow.querySelector(".price").textContent;
-    const productQuantity = productRow.querySelector(".quantité").textContent;
-  
-    // Créez un objet pour représenter le produit et ajoutez-le au tableau du panier
-    const product = { image: productImage, description: productDescription, price: productPrice, quantity: productQuantity };
-    cartItems.push(product);
+
+    // Recherchez le produit correspondant dans le panier
+    const existingCartItem = cartItems.find((item) => item.description === productDescription);
+      
+    // Si le produit est déjà dans le panier, mettez à jour sa quantité
+    if (existingCartItem) {
+      existingCartItem.quantity += 1;
+      // Mettez à jour la quantité affichée dans la section du produit
+      const quantityElement = productRow.querySelector(".quantité");
+      quantityElement.textContent = `Quantité: ${existingCartItem.quantity}`;
+      return; // Sortir de la fonction pour éviter l'ajout en double
+    }
+
+    // Sinon, ajoutez le produit au panier avec une quantité de 1
+    cartItems.push({ image: productImage, description: productDescription, price: productPrice, quantity: 1 });
 
     // Fonction pour mettre à jour le nombre d'articles dans le panier affiché sur le bouton "voir mon panier"
-function updateCartCount() {
-  const cartButton = document.querySelector("#panier");
-  cartButton.innerHTML= `<p>Voir votre panier: <br>${cartItems.length} articles</p>`;
-}
+    function updateCartCount() {
+      const cartButton = document.querySelector("#panier");
+      cartButton.innerHTML = `<p>Voir votre panier: <br>${cartItems.length} articles</p>`;
+    }
+
     // Mettre à jour le nombre d'articles dans le panier affiché sur le bouton "voir mon panier"
     updateCartCount();
+    
+    // Mettre à jour la quantité affichée dans la section du produit
+    const quantityElement = productRow.querySelector(".quantité");
+    quantityElement.textContent = "Quantité: 1";
   });
 });
-
 
 
 // Ajouter un gestionnaire d'événements au bouton "voir mon panier"
@@ -37,16 +51,6 @@ cartButton.addEventListener("click", () => {
 
 // Parcourez tous les produits dans le panier et ajoutez-les à la page du panier
 const cartAjout = document.querySelector("#achats-total");
-
-// Ajoutez un objet "quantité" à chaque produit dans le panier
-function addToCart(product) {
-  const existingCartItem = cartItems.find((item) => item.id === product.id);
-  if (existingCartItem) {
-    existingCartItem.quantity += 1;
-  } else {
-    cartItems.push({...product, quantity: 1});
-  }
-}
 
 cartItems.forEach((product) => {
   let cartProduct = document.createElement("div");
@@ -59,6 +63,26 @@ cartItems.forEach((product) => {
   `;
   cartAjout.appendChild(cartProduct);
 });
-  // Ajoutez la page du panier à l'élément body de la page
-  document.body.appendChild(cartPage);
+
+
+function calculerPrixTotal(products) {
+  let total = 0;
+
+  products.forEach((product) => {
+    total += product.price * product.quantity;
+  });
+
+  return total;
+}
+
+function priceTotal() {
+  const cartPrice = document.querySelector("#price-total2");
+  const total = calculerPrixTotal(cartItems); // ici, cartItems est l'argument à passer
+  cartPrice.innerHTML = `<p>Votre panier est de: <br>${total} €</p>`;
+}
+
+priceTotal();
+
+// Ajoutez la page du panier à l'élément body de la page
+document.body.appendChild(cartPage);
 });

@@ -220,7 +220,8 @@ h2{
 }
 
 .achat{
-    width: 100%;
+    width: 90%;
+    padding-right: 10%;
     height: 12vh;
     margin: 1vh 0vh;
     display: flex;
@@ -349,6 +350,8 @@ h2{
 
     .achat{
         height: 15vh;
+        padding-right: 0%;
+        width: 100%;
     }
 
     .achat p{

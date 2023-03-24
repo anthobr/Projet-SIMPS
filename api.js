@@ -1,4 +1,44 @@
-// je cible mes éléments sur le DOM 
+
+const myButton = document.querySelector('#myButton');
+const imgContainer = document.querySelector('.imgContainer');
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+
+fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=20`)
+  .then((response) => {
+      if (!response.ok) {
+          throw new Error("Erreur HTTP " + response.status);
+      }
+      return response.json();
+  })
+  .then((result) => {
+  const uniq = [...new Set(result)];
+      uniq.forEach((photo) => {
+        const box = document.createElement("div");
+        box.className = "col-4";
+        const imgP = document.createElement("img");
+        const nameEl = document.createElement("p");
+        const quoteEl = document.createElement("p");
+        nameEl.innerHTML = photo.character;
+        quoteEl.innerHTML = photo.quote;
+        imgP.src = photo.image;
+        imgP.className = "w-100";
+        nameEl.className = "h1 text-primary";
+        quoteEl.className = "fst-italic";
+        box.appendChild(imgP);
+        box.appendChild(nameEl);
+        box.appendChild(quoteEl);
+        imgContainer.appendChild(box);
+      });
+  })
+  .catch((error) => {
+      console.error('Erreur lors de l\'appel API:', error);
+  });
+});
+
+
+/*// je cible mes éléments sur le DOM 
 const characterList = document.getElementById("dropMenu");
 const characterView = document.getElementById("container");
 
@@ -60,4 +100,4 @@ characterList.addEventListener("change", () => {
     .catch(error => {
       console.error(`Erreur lors de la récupération des informations du personnage ${characterId}: ${error}`);
     });
-});
+});*/

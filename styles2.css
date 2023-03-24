@@ -77,42 +77,16 @@ li{
     justify-content: center;
 }
 
-h1{
-    width: 100%;
-    padding: 3% 0% 3% 0%;
-    font-weight: bold;
-    font-size: 40px;
-    height: 25vh;
-    text-align: center;
+.imgContainer{
+    width: 50%;
+    height: 40vh;
     display: flex;
-    align-items: flex-end;
-    color: lightcoral;
+    flex-direction: column;
 }
 
-.row{
-    text-align: center;
-    width: 100%;
-    padding: 5% 0% 5% 0%;
-}
-
-#select{
-    height: 15vh;
-}
-
-.form-select{
+.col-4{
     width: 100%;
 }
-
-.dropdown-item{
-    text-align: center;
-    width: 100%;
-    padding: 0% 2%;
-}
-
-#container{
-    height: 30vh;
-}
-
 
 
 /* SECTION */
