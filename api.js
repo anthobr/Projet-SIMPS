@@ -1,5 +1,5 @@
 
-const myButton = document.querySelector('#myButton');
+const myButton = document.querySelector('#dropMenu');
 const imgContainer = document.querySelector('.imgContainer');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +16,7 @@ fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=20`)
   const uniq = [...new Set(result)];
       uniq.forEach((photo) => {
         const box = document.createElement("div");
-        box.className = "col-4";
+        box.className = ".imgContainer";
         const imgP = document.createElement("img");
         const nameEl = document.createElement("p");
         const quoteEl = document.createElement("p");
@@ -24,7 +24,7 @@ fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=20`)
         quoteEl.innerHTML = photo.quote;
         imgP.src = photo.image;
         imgP.className = "w-100";
-        nameEl.className = "h1 text-primary";
+        nameEl.className = "text-primary";
         quoteEl.className = "fst-italic";
         box.appendChild(imgP);
         box.appendChild(nameEl);

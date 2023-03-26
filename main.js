@@ -58,8 +58,8 @@ cartItems.forEach((product) => {
   cartProduct.innerHTML = `
     <img src="${product.image}" alt="${product.description}">
     <p>${product.description}</p>
-    <p>${product.price}</p>
-    <p>Quantité:${product.quantity}</p>
+    <p>${product.price}€</p>
+    <p>Quantité:<br>${product.quantity}</p>
   `;
   cartAjout.appendChild(cartProduct);
 });
@@ -78,7 +78,7 @@ function calculerPrixTotal(products) {
 function priceTotal() {
   const cartPrice = document.querySelector("#price-total2");
   const total = calculerPrixTotal(cartItems); // ici, cartItems est l'argument à passer
-  cartPrice.innerHTML = `<p>Votre panier est de: <br>${total} €</p>`;
+  cartPrice.innerHTML = `<p>Votre panier est de:<br>${total} €</p>`;
 }
 
 priceTotal();
