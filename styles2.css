@@ -106,7 +106,8 @@ h1{
 }
 
 .imgContainer{
-    height: 50vh;
+    margin-bottom: 5vh;
+    height: 45vh;
     width: 80%;
     margin: 0 10%;
     display: flex;
