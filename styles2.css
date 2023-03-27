@@ -119,10 +119,12 @@ h1{
 
 .imgContainer h2{
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .imgContainer p{
     margin-bottom: 10px;
+
 }
 
 .imgContainer img{
